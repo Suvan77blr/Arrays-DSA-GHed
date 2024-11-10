@@ -1,0 +1,15 @@
+
+Array Problems List :-
+
+1. Largest Element in the array. (Smallest element as well.)
+2. Second largest element. (2nd smallest as well.)
+3. Checking for sorted array.
+4. Removing duplicates from a sorted array. (in-place manipulation & returning 'k')
+5. Left Rotate the array by one place. (Right rotate by 1.)
+6. Left Rotate the array by 'D' places. (Right rotate by 'D')
+7. Moving all zeros to end of the array.
+8. Linear Srch.
+9. Union of 2 Sorted Arrays.
+10. Intersection of 2 Sorted arrays.
+
+11. Missing number, in array of n-1 elements from 1 to n.
