@@ -15,3 +15,5 @@ Array Problems List :-
 11. Missing number, in array of n-1 elements from 1 to n.
 12. Maximum consequtive 1s.
 13. Finding the number which appears only once, while all others appear twice.
+
+14. Finding the longest subarray with sum 'k'.
