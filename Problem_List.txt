@@ -17,3 +17,10 @@ Array Problems List :-
 13. Finding the number which appears only once, while all others appear twice.
 
 14. Finding the longest subarray with sum 'k'.
+
+
+
+
+Extras (Other Sums from another src) :-
+
+1. Squares of a Sorted Array (LeetCode)
