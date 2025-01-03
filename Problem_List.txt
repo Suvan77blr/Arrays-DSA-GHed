@@ -23,4 +23,5 @@ Array Problems List :-
 
 Extras (Other Sums from another src) :-
 
-1. Squares of a Sorted Array (LeetCode)
+1. Squares of a Sorted Array (LeetCode - LC)
+2. Duplicate the Zeros (LC)
