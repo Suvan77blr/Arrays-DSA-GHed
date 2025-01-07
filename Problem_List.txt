@@ -26,3 +26,14 @@ Extras (Other Sums from another src) :-
 1. Squares of a Sorted Array (LeetCode - LC)
 2. Duplicate the Zeros (LC)
 3. Remove Element (LC) => [Similar to Moving Zeros to End]
+
+// Need to write.
+4. Merge Sorted Array (LC) => [Similar to Union of 2 Sorted Arrays].
+
+
+
+
+BINARY SEARCH :-
+
+1. Iterative & Recursive.
+
