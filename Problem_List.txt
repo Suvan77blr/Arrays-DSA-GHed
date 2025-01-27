@@ -36,4 +36,7 @@ Extras (Other Sums from another src) :-
 BINARY SEARCH :-
 
 1. Iterative & Recursive.
-
+2. Lower Bound.
+3. Upper Bound.
+4. Search Insert Position.
+4. Floor & Ceil in a Sorted Array.
