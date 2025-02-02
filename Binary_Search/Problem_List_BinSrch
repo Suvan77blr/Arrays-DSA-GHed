@@ -4,4 +4,5 @@ BINARY SEARCH :-
 2. Lower Bound.
 3. Upper Bound.
 4. Search Insert Position.
-4. Floor & Ceil in a Sorted Array.
+5. Floor in a Sorted Array.
+6. Ceil in a Sorted Array.
