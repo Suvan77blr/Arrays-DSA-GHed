@@ -1,10 +1,14 @@
 // Default template for Array Problems.
 
+// aabbcc
+// Problem : 
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
 void printVector(vector<int>& arr);
+void inputVector(vector<int>& arr, int n);
 
 class Solution{
     public:
