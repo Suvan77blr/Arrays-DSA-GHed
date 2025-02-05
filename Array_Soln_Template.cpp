@@ -4,61 +4,48 @@
 #include <vector>
 using namespace std;
 
+void printVector(vector<int>& arr);
+
 class Solution{
-    private:
-        int n;
-        vector<int> arr;
-        void getN();
-        void getVector();
-
     public:
-        Solution();
-        Solution(vector<int>& arr, int n);
-
-        void printVector();
+        // Defined methods for the Solution.
+        // void methodSolution(...args);
         // Additional Methods can be added as per the problem requirement.
-
 };
 
 // Main Code.
 int main(void)
-{    
+{   
+    int n;
+    cout << "Enter the size of the array : ";
+    cin >> n;
+
+    vector<int> arr;
+    inputVector(arr, n);
+
+    cout << "Input array : ";
+    printVector(arr);
+
     Solution obj = Solution();
-    obj.printVector();
+    
+    // Method Calls as requried
+    // obj.methodSolution(...args);
+
+    return 0;
 }
 
-
-// Definitions for the pre-existing constructors & methods of the SolnTemplate
-void Solution :: getN(){
-    cout << "Enter the size : ";
-    cin >> this->n;
-}
-
-void Solution :: getVector(){
+void inputVector(vector<int>& arr, int n) {
     cout << "Enter the " << n << " vector elements : ";
     int temp;
     for(int i = 0; i<n; i++){
         cin >> temp;
-        this->arr.push_back(temp);
+        arr.push_back(temp);
     }
 }
 
-Solution :: Solution(){
-    getN();
-    getVector();
-}
-
-Solution :: Solution(vector<int>& arr, int n){
-    this->n = n;
-    this->arr = arr;
-}
-
-void Solution :: printVector(){
-    cout << "Printing the vector ... \n";
+void printVector(vector<int>& arr){
     cout << "[ ";
-    for(const int& ele : this->arr){
+    for(const int& ele : arr) {
         cout << ele << " ";
-    }
-    cout << "]\n";
+    } cout << "]\n";
 }
-
