@@ -1,45 +1,47 @@
 
-// 091124
-// P5_1 : Right Rotating the array by 1.
+// Modified 0103252326 (Orig 091124). 
+/* P5_1 : Right rotating an array by '1' place.
+        - OPTIMAL code.
+*/
 
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
-void displayVector(vector<int>& v){
-    cout << "[ ";
-    for(int& ele : v){
-        cout << ele << " ";
-    }
-    cout << "]\n";
-}
+class Solution {
+    public:
+        void rightRotate(vector<int>& arr)
+        {
+            int n = arr.size();
+            int temp = arr[n-1];    // Store the last ele.
 
-void rot_by_one(vector<int>& v, int n){
-    int temp = v[n-1];
-    for(int i = n-1; i>0; i--){
-        v[i] = v[i-1];
-    }
-    v[0] = temp;
-}
+            for(int i=n-2; i>=0; i--)
+            {
+                arr[i+1] = arr[i];
+            }
+            arr[0] = temp;
+        }
+};
 
-int main(void){
+int main(void) {
     int n;
-    cout << "Enter the number of elements : ";
+    cout << "Enter the array size : ";
     cin >> n;
 
-    cout << "Enter the \'" << n << "\' elements : ";
-    vector<int> v(n);
-    for(int i = 0; i<n; i++){
-        cin >> v[i];
+    vector<int> arr(n);
+    cout << "Enter the " << n << " elements : ";
+    for(int i=0; i<n; i++) {
+        cin >> arr[i];
     }
 
-    cout << "Original vector : ";
-    displayVector(v);
+    Solution soln = Solution();
 
-    rot_by_one(v, n);
+    soln.rightRotate(arr);
 
-    cout << "Rotated vector : ";
-    displayVector(v);
-
-    cout << "EOP!\n";
+    cout << "[ ";
+    for(int i=0; i<n; i++)
+        cout << arr[i] << " ";
+    cout << "]\n";
+    return 0;
 }

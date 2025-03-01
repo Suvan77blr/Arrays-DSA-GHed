@@ -1,66 +1,45 @@
 
-// 051124
-// P5 : Left rotating an array by '1' place.
+// Modified 0103252322 (Orig 051124). 
+/* P5 : Left rotating an array by '1' place.
+        - OPTIMAL code.
+*/
 
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
-class Array
-{
-	int n;
-	int * arr;
-
-	public:	
-		Array();
-		void LRot_by_one();
-		void display();
-		~Array();
+class Solution {
+    public:
+        void leftRotate(vector<int>& arr)
+        {
+            int temp = arr[0];
+            int n = arr.size();
+            for(int i=1; i<=n; i++) {
+                arr[i-1] = arr[i];
+            }
+            arr[n-1] = temp;
+        }
 };
 
-Array :: Array(){
-	std :: cout << "Enter the number of elements of the array : ";
-	std :: cin >> n;
+int main(void) {
+    int n;
+    cout << "Enter the array size : ";
+    cin >> n;
 
-	arr = new int[n];
+    vector<int> arr(n);
+    cout << "Enter the " << n << " elements : ";
+    for(int i=0; i<n; i++) {
+        cin >> arr[i];
+    }
 
-	std :: cout << "Enter the \'" << n << "\' array elements : \n";
-	for(int i = 0; i<n; i++)
-	{
-		std :: cin >> arr[i];
-	}
-}
+    Solution soln = Solution();
 
-void Array :: LRot_by_one(){
-	int temp = arr[0];
-	for(int i = 1; i<n; i++){
-		arr[i-1] = arr[i];
-	}
-	arr[n-1] = temp;
-}
+    soln.leftRotate(arr);
 
-void Array :: display(){
-	std :: cout << "[ ";
-	for(int i = 0; i<n; i++){
-		cout << arr[i] << " ";
-	}
-	cout << "]\n";
-}
-
-Array :: ~Array(){
-	delete[] arr;
-}
-
-
-int main(void)
-{
-	Array obj1;
-	std :: cout << "Orig Arr : ";
-	obj1.display();
-
-	obj1.LRot_by_one();
-
-	std :: cout << "After 1 Rot : ";
-	obj1.display();
-
-	return 0;
+    cout << "[ ";
+    for(int i=0; i<n; i++)
+        cout << arr[i] << " ";
+    cout << "]\n";
+    return 0;
 }
