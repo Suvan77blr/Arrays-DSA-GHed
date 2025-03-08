@@ -1,101 +1,74 @@
 
-// 071124 (originally 061124's)
-// P7 : Move all zeros to the end of the array.
+// Modified 0803251257 (Orig 061124). 
+/* P7 : Move all zeros to the end of the array.
+
+    - BRUTE (not implemented)
+        > We append all non-zero elements to another array, keeping count of zeros.
+        > All the counted zeros are then appended to the new array.
+        > return the value of len - zerosCount
+
+    - OPTIMAL code.
+        
+        > We find the first zero. (i)
+        > if i==-1 => no zeros and can exit.
+        > Otherwise, then run the 2nd pointer (j) from i+1 to 'n'.
+        > Here.. 
+            if(arr[j] != 0)
+                swap arr[i], arr[j] & increment i.
+            else only j will be incremented. 
+        > Return the index 'i'.
+*/
 
 #include <iostream>
 #include <vector>
-//using namespace std;
+using namespace std;
 
-#define SWAP(a, b) {	\
-	a = a^b;	\
-	b = a^b;	\
-	a = a^b;	\
-}	\
+#define SWAP(a,b) { \
+    a = a + b; \
+    b = a - b; \
+    a = a - b; \
+} \
 
-void displayVector(std::vector<int>& arr){
-	std :: cout << "[ ";
-	for(const int num : arr)
-	{
-		std :: cout << num << " ";
-	}
-	std :: cout << "]\n";
-}	
+class Solution {
+    public:
+        int moveZeros(vector<int>& arr)
+        {
+            int i, n=arr.size();
+            for(i=0; i<n; i++) {
+                if(arr[i]==0)
+                    break;
+            }
+            
+            if(i == -1) return -1;
 
-// Prototype for Brute-Force soln.
-void brute_soln(std::vector<int>& arr);
-void my_soln(std::vector<int>& arr);
+            for(int j=i+1; j<n; j++) {
+                if(arr[j] != 0) {
+                    SWAP(arr[i], arr[j]);
+                    i++;
+                }
+            }
+            return i;
+        }
+};
 
-void setToZeros(std::vector<int>& arr){
-	//brute_soln(arr);
-	//my_soln(arr);
+int main(void) {
+    int n;
+    // cout << "Enter the array size : ";
+    cin >> n;
 
-//	/*
-	int j = -1;
-	for(int i = 0; i < arr.size(); i++){
-		if(arr[i]==0)
-		{
-			j = i;
-		}
-	}
-	if(j == -1)	//No zeros are present.
-		return;
+    vector<int> arr(n);
+    // cout << "Enter the " << n << " elements : ";
+    for(int i=0; i<n; i++) {
+        cin >> arr[i];
+    }
 
-	for(int i = j+1; i<arr.size(); i++){
-		if(arr[i] != 0){
-			SWAP(arr[i], arr[j]);
-			j++;
-		}
-	}
+    Solution soln = Solution();
+
+    int k = soln.moveZeros(arr);
+
+    cout << "Result : [ ";
+    for(int i=0; i<k; i++)
+        cout << arr[i] << " ";
+    cout << "]\n";
+    return 0;
 }
-
-int main(void){
-	int n = 9;
-	std::vector<int> arr = {1, 0, 2, 3, 2, 0, 0, 4, 5, 1};
-
-	std :: cout << "Orig Vec : ";
-	displayVector(arr);
-
-	setToZeros(arr);
-
-	std :: cout << "Zero-ed Vec : ";
-	displayVector(arr);
-
-	std :: cout << "EOP!\n";
-	return 0;
-}
-
-/*
-void brute_soln(std::vector<int>& arr){
-	std :: vector<int> temp;
-	for(const int ele : arr){
-		if(ele != 0)
-			temp.emplace_back(ele);
-	}
-
-	int i = 0;
-	for(; i<temp.size(); i++) {
-		arr[i] = temp[i];
-	}
-
-	for(; i<arr.size(); i++) {
-		arr[i] = 0;
-	}
-}
-//	*/
-
-
-/*
-void my_soln(std::vector<int>& arr){
-	int slow = 0,fast = 0;
-	for(; fast < arr.size(); fast++){
-		if(arr[fast]!=0)
-		{
-			arr[slow] = arr[fast];
-			slow++;
-		}
-	}
-	for(; slow < arr.size(); slow++){
-		arr[slow] = 0;
-	}
-}
-//	*/
