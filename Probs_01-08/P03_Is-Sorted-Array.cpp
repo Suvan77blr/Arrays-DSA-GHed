@@ -1,7 +1,7 @@
 
 // Modified 250225-0118 (Orig 021124 - MidN of 01). 
-/* P3 : Checking if the entered array is sorted.
-
+/* 
+    P3 : Checking if the entered array is sorted.
 */
 
 #include <iostream>
@@ -10,26 +10,26 @@
 using namespace std;
 
 class Solution {
-    public:
-        bool isSorted(vector<int>& arr)
+public:
+    bool isSorted(vector<int>& arr)
+    {
+        int n = arr.size();
+        for(int i=0; i<n-1; i++)
         {
-            int n = arr.size();
-            for(int i=0; i<n-1; i++)
-            {
-                if(arr[i] > arr[i+1])
-                    return false;
-            }
-            return true;
+            if(arr[i] > arr[i+1])
+                return false;
         }
+        return true;
+    }
 };
 
 int main(void) {
     int n;
-    cout << "Enter the array size : ";
+    // cout << "Enter the array size : ";
     cin >> n;
 
     vector<int> arr(n);
-    cout << "Enter the " << n << " elements : ";
+    // cout << "Enter the " << n << " elements : ";
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }

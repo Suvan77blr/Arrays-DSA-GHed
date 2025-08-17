@@ -9,27 +9,27 @@
 using namespace std;
 
 class Solution {
-    public:
-        int getLargestElementIndex(vector<int>& arr) 
-        {  
-            int n = arr.size();
-            int maxi_pos = 0;
-            for(int i=1; i<n; i++)
-            {
-                if(arr[maxi_pos] < arr[i])
-                    maxi_pos = i;
-            }
-            return maxi_pos;
+public:
+    int getLargestElementIndex(vector<int>& arr) 
+    {  
+        int n = arr.size();
+        int maxi_pos = 0;
+        for(int i=1; i<n; i++)
+        {
+            if(arr[maxi_pos] < arr[i])
+                maxi_pos = i;
         }
+        return maxi_pos;
+    }
 };
 
 int main(void) {
     int n;
-    cout << "Enter the array size : ";
+    // cout << "Enter the array size : ";
     cin >> n;
 
     vector<int> arr(n);
-    cout << "Enter the " << n << " elements : ";
+    // cout << "Enter the " << n << " elements : ";
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }

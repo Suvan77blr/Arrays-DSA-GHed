@@ -16,35 +16,35 @@
 using namespace std;
 
 class Solution {
-    public:
-        int getSecLargestElementIndex(vector<int>& arr) 
-        {  
-            int n = arr.size();
-            
-            // int sec_maxi_pos;
-            int sec_maxi_pos = -1, maxi_pos = 0;
-            for(int i=0; i<n; i++) {
-                if(arr[i] > arr[maxi_pos])
-                {
-                    sec_maxi_pos = maxi_pos;
-                    maxi_pos = i;
-                }
-                if(arr[i] > arr[sec_maxi_pos] && arr[i] != arr[maxi_pos])
-                {
-                    sec_maxi_pos = i;
-                }
+public:
+    int getSecLargestElementIndex(vector<int>& arr) 
+    {  
+        int n = arr.size();
+        
+        // int sec_maxi_pos;
+        int sec_maxi_pos = -1, maxi_pos = 0;
+        for(int i=0; i<n; i++) {
+            if(arr[i] > arr[maxi_pos])
+            {
+                sec_maxi_pos = maxi_pos;
+                maxi_pos = i;
             }
-            return sec_maxi_pos;
+            if(arr[i] > arr[sec_maxi_pos] && arr[i] != arr[maxi_pos])
+            {
+                sec_maxi_pos = i;
+            }
         }
+        return sec_maxi_pos;
+    }
 };
 
 int main(void) {
     int n;
-    cout << "Enter the array size : ";
+    // cout << "Enter the array size : ";
     cin >> n;
 
     vector<int> arr(n);
-    cout << "Enter the " << n << " elements : ";
+    // cout << "Enter the " << n << " elements : ";
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }

@@ -1,7 +1,9 @@
 
 // Modified 0103252326 (Orig 091124). 
 /* P5_1 : Right rotating an array by '1' place.
-        - OPTIMAL code.
+        - Store arr[n-1] as TEMP.
+        - Shift all i:n-2->0 by one place forward.
+        - Update arr[0] <- TEMP.
 */
 
 #include <iostream>

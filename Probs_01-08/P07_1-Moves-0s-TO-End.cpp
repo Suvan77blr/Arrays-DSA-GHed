@@ -12,11 +12,15 @@
         > We find the first zero. (i)
         > if i==-1 => no zeros and can exit.
         > Otherwise, then run the 2nd pointer (j) from i+1 to 'n'.
+        
         > Here.. 
             if(arr[j] != 0)
                 swap arr[i], arr[j] & increment i.
             else only j will be incremented. 
         > Return the index 'i'.
+
+
+    ** Same Logic for Removing all instances of an element in an array! => we return 'k' OR the First valid idxes.
 */
 
 #include <iostream>
